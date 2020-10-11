@@ -7,7 +7,7 @@ Funcionalidade: Excluir formações
   @e2e
   Cenário: Excluir formação existente
     Dado estou em "/login"
-    E preencho "email" com "vinicius@alura.com.br"
+    E preencho "email" com "email@example.com"
     E preencho "senha" com "123456"
     E pressiono "Fazer Login"
     E sigo o link "Formações"

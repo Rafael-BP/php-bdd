@@ -22,7 +22,7 @@ default:
         tags: e2e
   extensions:
     Behat\MinkExtension:
-      base_url:  'http://0.0.0.0:8080'
+      base_url:  'http://localhost:8080'
       sessions:
         default:
           goutte: ~

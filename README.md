@@ -15,22 +15,21 @@ Tópicos abordados:
 ## Para rodar o projeto
 
 ### Pré-Requisitos
-- Docker
 - PHP 7.4
 
 #### Inicializar o projeto
 
 ```
-docker run --rm --interactive --tty -v ${PWD}:/app --workdir=/app composer install
+composer install
 ```
 
-#### Criar e configure o usuário do BD
+#### Criar e configure o BD
 ```
-docker run --rm --interactive --tty -v ${PWD}:/app --workdir=/app php:7.4-cli php vendor/bin/doctrine orm:schema-tool:create
+vendor/bin/doctrine orm:schema-tool:create
 ```
 
 ```
-docker run --rm --interactive --tty -v ${PWD}:/app --workdir=/app php:7.4-cli php vendor/bin/doctrine dbal:run-sql "INSERT INTO usuarios (email, senha) VALUES ('email@example.com', '\$argon2i\$v=19\$m=65536,t=4,p=1\$WHpBb1FzTDVpTmQubU55bA\$jtZiWSSbmw1Ru4tYEq1SzShrMu0ap2PjblRQRubNPgo');"
+vendor/bin/doctrine dbal:run-sql "INSERT INTO usuarios (email, senha) VALUES ('email@example.com', '\$argon2i\$v=19\$m=65536,t=4,p=1\$WHpBb1FzTDVpTmQubU55bA\$jtZiWSSbmw1Ru4tYEq1SzShrMu0ap2PjblRQRubNPgo');"
 ```
 
 #### Rodar o projeto
@@ -39,7 +38,7 @@ php -S localhost:8080 -t public
 ```
 
 
-[Certificado]: 
+[Certificado]: https://cursos.alura.com.br/certificate/c7655a26-5979-4bd0-ab04-02d59136552c
 
 [PHP e Behavior Driven Development]: https://cursos.alura.com.br/course/php-introducao-bdd
 

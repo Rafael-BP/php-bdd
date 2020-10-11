@@ -1,5 +1,6 @@
 <?php
 
+use Behat\Behat\Tester\Exception\PendingException;
 use Alura\Armazenamento\Entity\Formacao;
 use Behat\Behat\Context\Context;
 
@@ -36,5 +37,19 @@ class FormacaoEmMemoria implements Context
     public function euDevoTerUmaFormacaoCriadaComADescricao(string $descricaoFormacao)
     {
         assert($this->formacao->getDescricao() === $descricaoFormacao);
+    }
+
+    /**
+     * @When eu tentar editar uma formação com a descrição :$descricaoFormacao
+     */
+    public function euTentarEditarUmaFormacaoComADescricao($descricaoFormacao)
+    {
+        $this->formacao = new Formacao();
+
+        try {
+            $this->formacao->setDescricao($descricaoFormacao);
+        } catch (\InvalidArgumentException $exception) {
+            $this->mensagemDeErro = $exception->getMessage();
+        }
     }
 }
