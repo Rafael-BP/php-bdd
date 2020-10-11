@@ -1,0 +1,21 @@
+{
+  "autoload": {
+    "psr-4": {
+        "Alura\\Armazenamento\\": "src/"
+    }
+  },
+  "require": {
+    "psr/http-message": "^1.0",
+    "psr/http-server-handler": "^1.0",
+    "nyholm/psr7": "^1.1",
+    "nyholm/psr7-server": "^0.3.0",
+    "doctrine/orm": "^2.6",
+    "php-di/php-di": "^6.0"
+  },
+  "require-dev": {
+    "behat/behat": "*",
+    "behat/mink": "*",
+    "behat/mink-extension": "*",
+    "behat/mink-goutte-driver": "^1.2"
+  }
+}
